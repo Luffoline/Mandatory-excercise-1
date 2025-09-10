@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<span>Temperature: </span>
+<input id="myInput" type="text"/>
+<button id="myButton">Convert to celsius</button>
+<button id="myButton2">Convert to Fahrenheit</button>
+<h2 id="myText">The result...</h2>
+
+<script>
+
+    let myButton = document.getElementById('myButton');
+    let myInput = document.getElementById('myInput');
+    let myText= document.getElementById('myText');
+    let myButton2 = document.getElementById('myButton2');
+
+    myButton.addEventListener('click', function(evt){
+        let Fahrenheit = parseFloat(myInput.value);
+        let Celcius = (Fahrenheit - 32) * 5/9;
+        myText.innerHTML = Fahrenheit + " Fahrenheit equals " + Celcius.toFixed() + " Celsius"
+    });
+
+    
+    myButton2.addEventListener('click', function(evt){
+        let Celcius = parseFloat(myInput.value);
+        let Fahrenheit = Celcius * 9/5 + 32;
+        myText.innerHTML = Celcius + " Celsius equals " + Fahrenheit.toFixed() + " Fahrenheit";
+    });
+
+</script>
+    
+</body>
+</html>

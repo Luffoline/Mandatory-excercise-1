@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Type a text</span>
+    <Input id="myInput"></Input>
+    <button id = "myBtn">Submit</button>
+    <h2 id = "myText">Word count</h2>
+
+    <script>
+
+        let myInput = document.getElementById('myInput');
+        let myBtn = document.getElementById('myBtn');
+        let count = document.getElementById('myText');
+
+        myBtn.addEventListener('click', function(evt){
+            let text = myInput.value;
+            let words = text.split(" ");
+            count.innerHTML = "Word count: " + words.length;
+        })
+
+    </script>
+    
+</body>
+</html>

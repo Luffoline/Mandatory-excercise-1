@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cnv" width="400" height="400"></canvas>
+    <br>
+    <input id="inpRadius" type="range" min="0" max="200" value="100">
+    
+    
+    <script>
+
+    let cnv = document.getElementById('cnv');
+    let inpRadius = document.getElementById('inpRadius');
+
+    let ctx = cnv.getContext("2d");
+    ctx.fillstyle = "grey";
+    ctx.strokeStyle = "orange";
+    ctx.lineWidth = 2;
+    drawCircle();
+
+    //------------------------------------
+    inpRadius.addEventListener('input', function(evt){
+        drawCircle();
+    });
+    //------------------------------------
+
+    function drawCircle(){
+        let radius = parseFloat(inpRadius.value);
+        ctx.fillRect(0, 0, 400, 400);
+        ctx.beginPath();
+        ctx.arc(200, 200, radius, 0, 2*Math.PI );
+        ctx.stroke();
+
+        //let angles = [0, Math.PI/2, Math.PI, 3*Math.PI/2];
+        
+        let radius2 = 20;
+        let angles = [0, Math.PI/2, Math.PI, 3*Math.PI/2];
+        for(let i=0; i<angles.length; i++){
+            let angle = angles[i];
+            let x = 200 + radius * Math.cos(angle);
+            let y = 200 + radius * Math.sin(angle);
+            ctx.beginPath()
+            ctx.arc(x, y, radius2, 0, 2*Math.PI);
+            ctx.stroke();
+        }
+     
+    }
+    console.log(drawCircle);
+
+    </script>
+    
+</body>
+</html>

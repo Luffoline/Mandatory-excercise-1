@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let myH2 = document.createElement("h2");
+
+        document.body.appendChild(myH2);
+
+        function getRandomHue() {
+        return Math.floor(Math.random() * 360);
+    }
+        for (let i = 1; i <= 10; i++) {
+  
+         let myH2 = document.createElement("h2");
+         
+         myH2.innerHTML = i + " This is an H2 element";
+         myH2.style.color = `hsl(${getRandomHue()}, 80%, 50%)`;
+
+        document.body.appendChild(myH2);
+}
+
+    </script>
+    
+</body>
+</html>

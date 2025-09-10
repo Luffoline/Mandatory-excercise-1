@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Name</span> <input id="myNameInput">
+    <br>
+    <span>Phone</span> <input id="myPhoneInput"> <button id ="myBtn2">Delete phone number</button>
+    <br><br>
+    <button id="myBtn">Submit</button>
+
+    <ul id="personList"></ul>
+
+    <script>
+
+       let person = document.getElementById('myNameInput');
+       let phone = document.getElementById('myPhoneInput');
+       let btn = document.getElementById('myBtn');
+       let btn2 = document.getElementById('myBtn2');
+
+        const info ={
+            name: [],
+            tlf: [],
+        }
+       btn.addEventListener('click', function(evt){
+          info.name.push(person.value);
+          info.tlf.push(phone.value);
+
+          let listHTML = "";
+
+          for(let i = 0; i < info.name.length; i++){
+            listHTML += `<ul><li>Name: ${info.name[i]}<br>Phone: ${info.tlf[i]}</li></ul><hr>`;
+          }
+          
+          document.getElementById("personList").innerHTML = listHTML;
+       });
+
+       btn2.addEventListener('click', function(evt){
+        const delPhone = phone.value;
+        const index = info.tlf.indexOf(delPhone);
+
+        if (index !== -1){
+            info.name.splice(index, 1);
+            info.tlf.splice(index, 1);
+          
+            
+          let listHTML = "";
+
+          for(let i = 0; i < info.name.length; i++){
+            listHTML += `<ul><li>Name: ${info.name[i]}<br>Phone: ${info.tlf[i]}</li></ul><hr>`;
+          }
+          
+          document.getElementById("personList").innerHTML = listHTML;
+        }
+
+       })
+       
+    </script>
+    <div></div>
+</body>
+</html>

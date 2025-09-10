@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="mybtn">Click me</button>
+    <h2 id="myText"></h2>
+
+    <script>
+
+        let myBtn = document.getElementById('mybtn');
+        let myText = document.getElementById('myText');
+        let click = 0;
+
+        myBtn.addEventListener('click', function(evt){
+        click++;
+        myText.innerHTML = "You clicked " + click + " times ";
+        
+        })
+
+        
+
+    </script>
+</body>
+</html>

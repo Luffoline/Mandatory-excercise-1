@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="mybtn">Throw the dice</button>
+    <h2 id="myText"></h2>
+
+    <script>
+
+        let myBtn = document.getElementById('mybtn');
+        let myText = document.getElementById('myText');
+        let dice = 0;
+        
+        myBtn.addEventListener('click', function(evt){
+            
+        let dice = Math.floor(Math.random() * 6)+1;
+
+            if(dice === 6){
+         myText.innerHTML = "GG you rolled a " + dice;
+
+            }else{
+
+        myText.innerHTML = "You rolled a " + dice;
+            }
+        });
+
+        
+
+    </script>
+
+
+</body>
+</html>
