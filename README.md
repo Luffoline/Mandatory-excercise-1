@@ -9,7 +9,6 @@ Some of the examples included:
 - 🌈 Displaying random colors on font
 - ⚪ Drawing circles with HTML & CSS
 - 🔤 Styling and formatting text
-- 🖼️ Adding and formatting images
 - 🎵 Other interactive and visual experiments
 
 ## 🚀 How to Use
